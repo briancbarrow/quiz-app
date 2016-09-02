@@ -1,0 +1,40 @@
+/** {
+  text-align: center;
+}*/
+
+header {
+  border: solid 1px gray;
+  text-align: center;
+}
+
+.quiz-container {
+  text-align: left;
+  max-width: 400px;
+  border: solid 1px gray;
+  margin-top: 15px;
+}
+
+.quiz-container h2 {
+  text-align: center;
+}
+
+li {
+  list-style-type: none;
+}
+
+li label {
+  margin-left: 20px;
+  margin-top: 1px;
+  font-weight: lighter;
+}
+
+li input {
+  position: absolute;
+  margin-left: -40px;
+}
+
+form button {
+  margin: auto;
+  position: relative;
+  left: 75px;
+}
