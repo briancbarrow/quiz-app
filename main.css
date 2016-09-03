@@ -1,17 +1,52 @@
-/** {
+* {
   text-align: center;
-}*/
+}
 
 header {
   border: solid 1px gray;
   text-align: center;
+  width: 800px;
+  margin: auto;
+}
+
+.counter-div {
+  margin: 5px 85px;
+}
+
+.counter{
+  display: none;  
+  position: relative;
+}
+
+.hide-this{
+  display: inline;
+  color: white;
+}
+
+.correct-counter {
+  left: -165px;
+}
+
+.question-counter {
+  right: -165px;
+}
+
+.intro {
+  text-align: center;
+  max-width: 600px;
+  border: solid 1px gray;
+  margin-top: 15px;
+}
+.intro button {
+  margin-bottom: 15px;
 }
 
 .quiz-container {
   text-align: left;
-  max-width: 400px;
+  max-width: 600px;
   border: solid 1px gray;
   margin-top: 15px;
+  display: none;
 }
 
 .quiz-container h2 {
@@ -20,12 +55,15 @@ header {
 
 li {
   list-style-type: none;
+  text-align: left;
 }
 
 li label {
   margin-left: 20px;
   margin-top: 1px;
   font-weight: lighter;
+  position: relative;
+  text-align: left;
 }
 
 li input {
@@ -33,8 +71,8 @@ li input {
   margin-left: -40px;
 }
 
-form button {
-  margin: auto;
+button.next, button.submit {
   position: relative;
-  left: 75px;
+  margin: 0 10px 15px 10px;
+  display: none;
 }
