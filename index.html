@@ -12,12 +12,18 @@
         <div class='counter-div'>
           <p class="hide-this">test</p>
           <p class="counter correct-counter"><span class='correct-count'>0</span> of 5 correct</p>
-          <p class="counter question-counter">You are on question <span class='question-count'>0</span> of 5</p>
+          <p class="counter question-counter">You are on question <span class='question-count'>1</span> of 5</p>
         </div>
       </header>
       <div class="container intro">
         <h2>Ready To Test Your Knowledge!?</h2>
         <button class="begin">Click to Start</button>
+      </div>
+      <div class="container quiz-overlay">
+        <form class="overlay-form">
+          <h1 class="overlay-title">GOOD JOB!</h1>
+          <button type="button" class="next">Next Question</button>
+        </form>
       </div>
       <div class="container quiz-container">
         <h2 class="question">Question</h2>
@@ -41,13 +47,14 @@
             </li>
           </ul>
           <button type="submit" class='submit'>Submit Answer</button>
-          <button type="button" class="next">Next Question</button>
+          
         </form>
       </div>
     </div>
 
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/external/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
   </body>
 </html>

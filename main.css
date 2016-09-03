@@ -44,9 +44,22 @@ header {
 .quiz-container {
   text-align: left;
   max-width: 600px;
+  height: 250px;
   border: solid 1px gray;
   margin-top: 15px;
   display: none;
+}
+
+.quiz-overlay {
+  width: 600px;
+  height: 250px;
+  border: solid 1px gray;
+  margin-top: 15px;
+  background-color: green;
+  position: absolute;
+  display: none;
+  left: 383px;
+  z-index: 1000;
 }
 
 .quiz-container h2 {
@@ -71,8 +84,16 @@ li input {
   margin-left: -40px;
 }
 
-button.next, button.submit {
+button.submit {
   position: relative;
   margin: 0 10px 15px 10px;
-  display: none;
+}
+
+button.next {
+  position: relative;
+  top: 50px;
+}
+
+.overlay-title {
+  margin-top: 75px;
 }

@@ -20,6 +20,16 @@ $(document).ready(function() {
         correct: "Cars"
       }
     ],
+    submit: $('form#quiz-form').submit(function(event) {
+      event.preventDefault();
+      quizObj.checkAnswer();
+      
+    }),
+    nextQuestion: $('.next').on('click', function(){
+      quizObj.renderQuestion();
+      $('.quiz-overlay').fadeOut(100);
+      $('input[name=answers]:checked').attr('checked', false);
+    }),
     renderQuestion: function(){
       $(".question").text(quizObj.questions[quizObj.counter].question);
       $(".answer1").text(quizObj.questions[quizObj.counter].answer1);
@@ -31,15 +41,30 @@ $(document).ready(function() {
       $(".answer4").text(quizObj.questions[quizObj.counter].answer4);
       $("#answer4").attr('value', quizObj.questions[quizObj.counter].answer4);
       $('.submit').show();
-      $('.next').hide();
     },
-    checkAnswer: $('form#quiz-form').submit(function(event) {
-      event.preventDefault();
+    renderOverlay: function(boolean) {
+      if (boolean) {
+        $('.quiz-overlay').css('background-color', 'green');
+        $('.quiz-overlay h1').text('GOOD jOB!');
+      } else {
+        $('.quiz-overlay').css('background-color', 'red');
+        $('.quiz-overlay h1').text('Maybe Next Time!');
+      }
+    },
+    checkAnswer: function(){
       if($('input[name=answers]:checked').val() === quizObj.questions[quizObj.counter].correct) {
         quizObj.correct++;
-        console.log(quizObj.correct)
+        $('.correct-count').text(quizObj.correct);
+        quizObj.counter++;
+        $('.question-count').text(quizObj.counter + 1);
+        quizObj.renderOverlay(true);
+      } else {
+        quizObj.renderOverlay(false);
+        quizObj.counter++;
+        $('.question-count').text(quizObj.counter + 1);
       }
-    })
+      $('.quiz-overlay').fadeIn(100);
+    }
   };
 
   quizObj.renderQuestion();
