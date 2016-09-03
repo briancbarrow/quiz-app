@@ -3,16 +3,17 @@
   <head>
     <title>Quiz App</title>
     <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Podkova:700" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
   </head>
   <body>
     <div class="container app-container">
       <header>
-        <h1>Quiz App</h1>
+        <h1></h1>
         <div class='counter-div'>
           <p class="hide-this">test</p>
-          <p class="counter correct-counter"><span class='correct-count'>0</span> of 5 correct</p>
-          <p class="counter question-counter">You are on question <span class='question-count'>1</span> of 5</p>
+          <p class="counter correct-counter"><span class='correct-count'>0</span> of 10 correct</p>
+          <p class="counter question-counter">You are on question <span class='question-count'>1</span> of 10</p>
         </div>
       </header>
       <div class="container intro">
@@ -21,9 +22,19 @@
       </div>
       <div class="container quiz-overlay">
         <form class="overlay-form">
-          <h1 class="overlay-title">GOOD JOB!</h1>
+          <div class="overlay-div">
+            <h1 class="overlay-title">GOOD JOB!</h1>
+            <h4 class="correct-answer">Correct answer was <span>test</h4>
+          </div>
           <button type="button" class="next">Next Question</button>
+          <button type="button" class='final'>See Final Score</button>
         </form>
+      </div>
+      <div class="container final-overlay">
+          <h1 class="final-title">You got <span class="final-score">0</span>%!</h1>
+          <button type="button" class="new">Re-Start Quiz</button>
+      </div>
+      <div class="container overlay">
       </div>
       <div class="container quiz-container">
         <h2 class="question">Question</h2>
@@ -47,7 +58,7 @@
             </li>
           </ul>
           <button type="submit" class='submit'>Submit Answer</button>
-          
+          <button type="submit" class='finish'>Finish Quiz</button>
         </form>
       </div>
     </div>
