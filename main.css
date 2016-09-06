@@ -19,7 +19,7 @@ header {
 }
 
 .counter{
-  display: none;  
+  display: none;
   position: relative;
   font-family: 'Podkova', serif;
   font-size: 20px;
@@ -68,12 +68,10 @@ header {
   border: solid 1px gray;
   margin-top: 15px;
   background-color: #5fb32a;
-  position: absolute;
-  display: block;
+  display: relative;
   margin-right: auto;
   margin-left: auto;
-  left: 383px;
-  z-index: 1000;  
+  z-index: 1000;
   border-radius: 20px;
 }
 
@@ -85,9 +83,7 @@ header {
   margin-right: auto;
   margin-left: auto;
   background-color: #ADFF2F;
-  position: absolute;
   display: block;
-  left: 383px;
   z-index: 1000;
   border-radius: 20px;
 }
