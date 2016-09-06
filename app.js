@@ -1,7 +1,9 @@
+$('.quiz-overlay').hide();
+$('.finish').hide();
+$('.final-overlay').hide();
+
 $(document).ready(function() {
-  $('.quiz-overlay').hide();
-  $('.finish').hide();
-  $('.final-overlay').hide();
+
   var quizObj = {
     counter: 0,
     correct: 0,
