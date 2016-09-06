@@ -69,7 +69,9 @@ header {
   margin-top: 15px;
   background-color: #5fb32a;
   position: absolute;
-  display: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
   left: 383px;
   z-index: 1000;  
   border-radius: 20px;
@@ -80,9 +82,11 @@ header {
   height: 275px;
   border: solid 1px gray;
   margin-top: 15px;
+  margin-right: auto;
+  margin-left: auto;
   background-color: #ADFF2F;
   position: absolute;
-  display: none;
+  display: block;
   left: 383px;
   z-index: 1000;
   border-radius: 20px;
