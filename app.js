@@ -84,17 +84,19 @@ $(document).ready(function() {
     submit: $('form#quiz-form').submit(function(event) {
       event.preventDefault();
       quizObj.checkAnswer();
-      
+
     }),
     nextQuestion: $('.next').on('click', function(){
       quizObj.renderQuestion();
-      $('.quiz-overlay').fadeOut(100);
+      $('.quiz-overlay').fadeOut(100, function(){
+        $('.quiz-container').fadeIn(50);
+      });
       $('input[name=answers]:checked').attr('checked', false);
       $('.question-count').text(quizObj.counter + 1);
     }),
     seeFinal: $('.final').on('click', function(){
-      $('.final-overlay').fadeIn(100, function() {
-        $('.quiz-overlay').hide();
+      $('.quiz-overlay').fadeOut(100, function() {
+        $('.final-overlay').fadeIn(50);
       });
       $('.final-score').text(quizObj.correct * 10);
     }),
@@ -128,13 +130,13 @@ $(document).ready(function() {
         $('.submit').hide();
       } else {
         $('.submit').show();
-      } 
+      }
     },
     renderOverlay: function(boolean) {
       if (boolean) {
         $('.quiz-overlay').css('background-color', '#5fb32a');
-        $('.quiz-overlay h1').text('GOOD JOB!');    
-        $('.correct-answer').hide();    
+        $('.quiz-overlay h1').text('GOOD JOB!');
+        $('.correct-answer').hide();
         if(quizObj.counter === quizObj.questions.length) {
           $('.final').show();
           $('.next').hide();
@@ -157,13 +159,16 @@ $(document).ready(function() {
       if($('input[name=answers]:checked').val() === quizObj.questions[quizObj.counter].correct) {
         quizObj.correct++;
         $('.correct-count').text(quizObj.correct);
-        quizObj.counter++;        
+        quizObj.counter++;
         quizObj.renderOverlay(true);
       } else {
         quizObj.counter++;
-        quizObj.renderOverlay(false); 
+        quizObj.renderOverlay(false);
       }
-      $('.quiz-overlay').fadeIn(100);
+      $('.quiz-container').fadeOut(100, function(){
+        $('.quiz-overlay').fadeIn(100);
+      })
+
     }
   };
 
@@ -174,7 +179,7 @@ $(document).ready(function() {
       $(".quiz-container").fadeIn(1000);
       $(".overlay").show();
       $(".counter").fadeIn(1000).css("display", "inline");
-    });    
+    });
   });
 
   // console.log(quizObj.correct)
